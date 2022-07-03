@@ -3,10 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CityController;
-use App\Http\Controllers\Api\BecaController;
-use App\Http\Controllers\Api\BondController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ZoneController;
+use App\Http\Controllers\Api\BecaController;
+use App\Http\Controllers\Api\BondController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\MediaController;
 use App\Http\Controllers\Api\CampusController;
@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\ModalityController;
 use App\Http\Controllers\Api\PrestigeController;
 use App\Http\Controllers\Api\RectoriaController;
 use App\Http\Controllers\Api\WellnessController;
+use App\Http\Controllers\Api\ConvenioController;
 use App\Http\Controllers\Api\AgreementController;
 use App\Http\Controllers\Api\BasicCoreController;
 use App\Http\Controllers\Api\LifeStyleController;
@@ -28,38 +29,39 @@ use App\Http\Controllers\Api\DepartmentController;
 use App\Http\Controllers\Api\UniversityController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\RequerimentController;
-use App\Http\Controllers\Api\BecaBenefitsController;
 use App\Http\Controllers\Api\UserStudentsController;
+use App\Http\Controllers\Api\BecaBenefitsController;
 use App\Http\Controllers\Api\AcademicLevelController;
 use App\Http\Controllers\Api\KnowledgeAreaController;
-use App\Http\Controllers\Api\AgreementBondsController;
 use App\Http\Controllers\Api\EducationLevelController;
 use App\Http\Controllers\Api\AcademicProgramController;
 use App\Http\Controllers\Api\InternalizationController;
 use App\Http\Controllers\Api\StudentCommentsController;
-use App\Http\Controllers\Api\UniversityZonesController;
-use App\Http\Controllers\Api\UniversityBecasController;
 use App\Http\Controllers\Api\CityUniversitiesController;
 use App\Http\Controllers\Api\DepartmentCitiesController;
 use App\Http\Controllers\Api\BecaRequerimentsController;
 use App\Http\Controllers\Api\MediaTypeAllMediaController;
 use App\Http\Controllers\Api\CountryDepartmentsController;
-use App\Http\Controllers\Api\UniversityCampusesController;
-use App\Http\Controllers\Api\UniversityStudentsController;
 use App\Http\Controllers\Api\UniversityAllMediaController;
-use App\Http\Controllers\Api\UniversityAcademiesController;
-use App\Http\Controllers\Api\UniversityPrestigesController;
-use App\Http\Controllers\Api\UniversityEconomiesController;
 use App\Http\Controllers\Api\UniversityRectoriasController;
-use App\Http\Controllers\Api\UniversityLifeStylesController;
-use App\Http\Controllers\Api\UniversityWellnessesController;
+use App\Http\Controllers\Api\UniversityConveniosController;
+use App\Http\Controllers\Api\AcademicProgramZonesController;
+use App\Http\Controllers\Api\AcademicProgramBecasController;
+use App\Http\Controllers\Api\AcademicProgramBondsController;
+use App\Http\Controllers\Api\AcademicProgramCampusesController;
+use App\Http\Controllers\Api\AcademicProgramStudentsController;
 use App\Http\Controllers\Api\KnowledgeAreaBasicCoresController;
+use App\Http\Controllers\Api\AcademicProgramEconomiesController;
+use App\Http\Controllers\Api\AcademicProgramPrestigesController;
+use App\Http\Controllers\Api\AcademicProgramAcademiesController;
 use App\Http\Controllers\Api\ModalityAcademicProgramsController;
+use App\Http\Controllers\Api\AcademicProgramLifeStylesController;
+use App\Http\Controllers\Api\AcademicProgramWellnessesController;
 use App\Http\Controllers\Api\BasicCoreAcademicProgramsController;
 use App\Http\Controllers\Api\UniversityAcademicProgramsController;
-use App\Http\Controllers\Api\UniversityInternalizationsController;
 use App\Http\Controllers\Api\AcademicLevelAcademicProgramsController;
 use App\Http\Controllers\Api\EducationLevelAcademicProgramsController;
+use App\Http\Controllers\Api\AcademicProgramInternalizationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,19 +128,119 @@ Route::name('api.')->group(function () {
 
     Route::apiResource('academic-programs', AcademicProgramController::class);
 
+    // AcademicProgram Economies
+    Route::get('/academic-programs/{academicProgram}/economies', [
+        AcademicProgramEconomiesController::class,
+        'index',
+    ])->name('academic-programs.economies.index');
+    Route::post('/academic-programs/{academicProgram}/economies', [
+        AcademicProgramEconomiesController::class,
+        'store',
+    ])->name('academic-programs.economies.store');
+
+    // AcademicProgram Life Styles
+    Route::get('/academic-programs/{academicProgram}/life-styles', [
+        AcademicProgramLifeStylesController::class,
+        'index',
+    ])->name('academic-programs.life-styles.index');
+    Route::post('/academic-programs/{academicProgram}/life-styles', [
+        AcademicProgramLifeStylesController::class,
+        'store',
+    ])->name('academic-programs.life-styles.store');
+
+    // AcademicProgram Wellnesses
+    Route::get('/academic-programs/{academicProgram}/wellnesses', [
+        AcademicProgramWellnessesController::class,
+        'index',
+    ])->name('academic-programs.wellnesses.index');
+    Route::post('/academic-programs/{academicProgram}/wellnesses', [
+        AcademicProgramWellnessesController::class,
+        'store',
+    ])->name('academic-programs.wellnesses.store');
+
+    // AcademicProgram Prestiges
+    Route::get('/academic-programs/{academicProgram}/prestiges', [
+        AcademicProgramPrestigesController::class,
+        'index',
+    ])->name('academic-programs.prestiges.index');
+    Route::post('/academic-programs/{academicProgram}/prestiges', [
+        AcademicProgramPrestigesController::class,
+        'store',
+    ])->name('academic-programs.prestiges.store');
+
+    // AcademicProgram Internalizations
+    Route::get('/academic-programs/{academicProgram}/internalizations', [
+        AcademicProgramInternalizationsController::class,
+        'index',
+    ])->name('academic-programs.internalizations.index');
+    Route::post('/academic-programs/{academicProgram}/internalizations', [
+        AcademicProgramInternalizationsController::class,
+        'store',
+    ])->name('academic-programs.internalizations.store');
+
+    // AcademicProgram Campuses
+    Route::get('/academic-programs/{academicProgram}/campuses', [
+        AcademicProgramCampusesController::class,
+        'index',
+    ])->name('academic-programs.campuses.index');
+    Route::post('/academic-programs/{academicProgram}/campuses', [
+        AcademicProgramCampusesController::class,
+        'store',
+    ])->name('academic-programs.campuses.store');
+
+    // AcademicProgram Academies
+    Route::get('/academic-programs/{academicProgram}/academies', [
+        AcademicProgramAcademiesController::class,
+        'index',
+    ])->name('academic-programs.academies.index');
+    Route::post('/academic-programs/{academicProgram}/academies', [
+        AcademicProgramAcademiesController::class,
+        'store',
+    ])->name('academic-programs.academies.store');
+
+    // AcademicProgram Zones
+    Route::get('/academic-programs/{academicProgram}/zones', [
+        AcademicProgramZonesController::class,
+        'index',
+    ])->name('academic-programs.zones.index');
+    Route::post('/academic-programs/{academicProgram}/zones', [
+        AcademicProgramZonesController::class,
+        'store',
+    ])->name('academic-programs.zones.store');
+
+    // AcademicProgram Becas
+    Route::get('/academic-programs/{academicProgram}/becas', [
+        AcademicProgramBecasController::class,
+        'index',
+    ])->name('academic-programs.becas.index');
+    Route::post('/academic-programs/{academicProgram}/becas', [
+        AcademicProgramBecasController::class,
+        'store',
+    ])->name('academic-programs.becas.store');
+
+    // AcademicProgram Bonds
+    Route::get('/academic-programs/{academicProgram}/bonds', [
+        AcademicProgramBondsController::class,
+        'index',
+    ])->name('academic-programs.bonds.index');
+    Route::post('/academic-programs/{academicProgram}/bonds', [
+        AcademicProgramBondsController::class,
+        'store',
+    ])->name('academic-programs.bonds.store');
+
+    // AcademicProgram Students
+    Route::get('/academic-programs/{academicProgram}/students', [
+        AcademicProgramStudentsController::class,
+        'index',
+    ])->name('academic-programs.students.index');
+    Route::post('/academic-programs/{academicProgram}/students', [
+        AcademicProgramStudentsController::class,
+        'store',
+    ])->name('academic-programs.students.store');
+
     Route::apiResource('academies', AcademyController::class);
 
     Route::apiResource('agreements', AgreementController::class);
-
-    // Agreement Bonuses
-    Route::get('/agreements/{agreement}/bonds', [
-        AgreementBondsController::class,
-        'index',
-    ])->name('agreements.bonds.index');
-    Route::post('/agreements/{agreement}/bonds', [
-        AgreementBondsController::class,
-        'store',
-    ])->name('agreements.bonds.store');
 
     Route::apiResource('basic-cores', BasicCoreController::class);
 
@@ -152,31 +254,7 @@ Route::name('api.')->group(function () {
         'store',
     ])->name('basic-cores.academic-programs.store');
 
-    Route::apiResource('becas', BecaController::class);
-
-    // Beca Requeriments
-    Route::get('/becas/{beca}/requeriments', [
-        BecaRequerimentsController::class,
-        'index',
-    ])->name('becas.requeriments.index');
-    Route::post('/becas/{beca}/requeriments', [
-        BecaRequerimentsController::class,
-        'store',
-    ])->name('becas.requeriments.store');
-
-    // Beca Benefits
-    Route::get('/becas/{beca}/benefits', [
-        BecaBenefitsController::class,
-        'index',
-    ])->name('becas.benefits.index');
-    Route::post('/becas/{beca}/benefits', [
-        BecaBenefitsController::class,
-        'store',
-    ])->name('becas.benefits.store');
-
     Route::apiResource('benefits', BenefitController::class);
-
-    Route::apiResource('bonds', BondController::class);
 
     Route::apiResource('comments', CommentController::class);
 
@@ -270,7 +348,61 @@ Route::name('api.')->group(function () {
 
     Route::apiResource('zones', ZoneController::class);
 
+    Route::apiResource('all-media', MediaController::class);
+
+    Route::apiResource('becas', BecaController::class);
+
+    // Beca Requeriments
+    Route::get('/becas/{beca}/requeriments', [
+        BecaRequerimentsController::class,
+        'index',
+    ])->name('becas.requeriments.index');
+    Route::post('/becas/{beca}/requeriments', [
+        BecaRequerimentsController::class,
+        'store',
+    ])->name('becas.requeriments.store');
+
+    // Beca Benefits
+    Route::get('/becas/{beca}/benefits', [
+        BecaBenefitsController::class,
+        'index',
+    ])->name('becas.benefits.index');
+    Route::post('/becas/{beca}/benefits', [
+        BecaBenefitsController::class,
+        'store',
+    ])->name('becas.benefits.store');
+
+    Route::apiResource('bonds', BondController::class);
+
+    Route::apiResource('convenios', ConvenioController::class);
+
     Route::apiResource('universities', UniversityController::class);
+    /**
+     * Inicio Rutas personalizadas para extraer datos de las universidades
+     * ////////////////////////////////////////////////////////////////////
+     */
+    //Return universidades Convenio
+    Route::get('/universidadesConvenio', [
+        UniversityController::class,
+        'universidadesConvenio',
+    ])->name('universities.universidadesConvenio');
+
+    //virtualProgramInformation
+    Route::get('/virtualProgramInformation/{university_id}', [
+        UniversityController::class,
+        'virtualProgramInformation',
+    ])->name('universities.virtualProgramInformation');
+
+    //Programas academicos de una universidad con datos de modality, academic_level y education_level
+    Route::get('/programasUniversidad/{university_id}', [
+        UniversityController::class,
+        'programasUniversidad',
+    ])->name('universities.programasUniversidad');
+
+    /**
+     * ////////////////////////////////////////////////////////////////
+    * Fin Rutas personalizadas para extraer datos de las universidades
+    */
 
     // University Academic Programs
     Route::get('/universities/{university}/academic-programs', [
@@ -282,96 +414,6 @@ Route::name('api.')->group(function () {
         'store',
     ])->name('universities.academic-programs.store');
 
-    // University Zones
-    Route::get('/universities/{university}/zones', [
-        UniversityZonesController::class,
-        'index',
-    ])->name('universities.zones.index');
-    Route::post('/universities/{university}/zones', [
-        UniversityZonesController::class,
-        'store',
-    ])->name('universities.zones.store');
-
-    // University Campuses
-    Route::get('/universities/{university}/campuses', [
-        UniversityCampusesController::class,
-        'index',
-    ])->name('universities.campuses.index');
-    Route::post('/universities/{university}/campuses', [
-        UniversityCampusesController::class,
-        'store',
-    ])->name('universities.campuses.store');
-
-    // University Academies
-    Route::get('/universities/{university}/academies', [
-        UniversityAcademiesController::class,
-        'index',
-    ])->name('universities.academies.index');
-    Route::post('/universities/{university}/academies', [
-        UniversityAcademiesController::class,
-        'store',
-    ])->name('universities.academies.store');
-
-    // University Prestiges
-    Route::get('/universities/{university}/prestiges', [
-        UniversityPrestigesController::class,
-        'index',
-    ])->name('universities.prestiges.index');
-    Route::post('/universities/{university}/prestiges', [
-        UniversityPrestigesController::class,
-        'store',
-    ])->name('universities.prestiges.store');
-
-    // University Internalizations
-    Route::get('/universities/{university}/internalizations', [
-        UniversityInternalizationsController::class,
-        'index',
-    ])->name('universities.internalizations.index');
-    Route::post('/universities/{university}/internalizations', [
-        UniversityInternalizationsController::class,
-        'store',
-    ])->name('universities.internalizations.store');
-
-    // University Economies
-    Route::get('/universities/{university}/economies', [
-        UniversityEconomiesController::class,
-        'index',
-    ])->name('universities.economies.index');
-    Route::post('/universities/{university}/economies', [
-        UniversityEconomiesController::class,
-        'store',
-    ])->name('universities.economies.store');
-
-    // University Life Styles
-    Route::get('/universities/{university}/life-styles', [
-        UniversityLifeStylesController::class,
-        'index',
-    ])->name('universities.life-styles.index');
-    Route::post('/universities/{university}/life-styles', [
-        UniversityLifeStylesController::class,
-        'store',
-    ])->name('universities.life-styles.store');
-
-    // University Wellnesses
-    Route::get('/universities/{university}/wellnesses', [
-        UniversityWellnessesController::class,
-        'index',
-    ])->name('universities.wellnesses.index');
-    Route::post('/universities/{university}/wellnesses', [
-        UniversityWellnessesController::class,
-        'store',
-    ])->name('universities.wellnesses.store');
-
-    // University Students
-    Route::get('/universities/{university}/students', [
-        UniversityStudentsController::class,
-        'index',
-    ])->name('universities.students.index');
-    Route::post('/universities/{university}/students', [
-        UniversityStudentsController::class,
-        'store',
-    ])->name('universities.students.store');
-
     // University Rectorias
     Route::get('/universities/{university}/rectorias', [
         UniversityRectoriasController::class,
@@ -381,16 +423,6 @@ Route::name('api.')->group(function () {
         UniversityRectoriasController::class,
         'store',
     ])->name('universities.rectorias.store');
-
-    // University Becas
-    Route::get('/universities/{university}/becas', [
-        UniversityBecasController::class,
-        'index',
-    ])->name('universities.becas.index');
-    Route::post('/universities/{university}/becas', [
-        UniversityBecasController::class,
-        'store',
-    ])->name('universities.becas.store');
 
     // University All Media
     Route::get('/universities/{university}/all-media', [
@@ -402,5 +434,13 @@ Route::name('api.')->group(function () {
         'store',
     ])->name('universities.all-media.store');
 
-    Route::apiResource('all-media', MediaController::class);
+    // University Convenios
+    Route::get('/universities/{university}/convenios', [
+        UniversityConveniosController::class,
+        'index',
+    ])->name('universities.convenios.index');
+    Route::post('/universities/{university}/convenios', [
+        UniversityConveniosController::class,
+        'store',
+    ])->name('universities.convenios.store');
 });

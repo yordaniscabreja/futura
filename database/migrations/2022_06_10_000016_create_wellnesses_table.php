@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('actividades_culturales');
             $table->double('plan_covid19');
             $table->double('felicidad_entorno');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

@@ -18,7 +18,7 @@ class ModalityController extends Controller
      */
     public function index(Request $request)
     {
-       // $this->authorize('view-any', Modality::class);
+        $this->authorize('view-any', Modality::class);
 
         $search = $request->get('search', '');
 

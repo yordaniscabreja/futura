@@ -5,7 +5,7 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Bond;
 
-use App\Models\Agreement;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -61,11 +61,11 @@ class BondTest extends TestCase
     {
         $bond = Bond::factory()->create();
 
-        $agreement = Agreement::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'name' => $this->faker->name,
-            'agreement_id' => $agreement->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->putJson(route('api.bonds.update', $bond), $data);

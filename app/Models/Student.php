@@ -11,7 +11,7 @@ class Student extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['user_id', 'university_id', 'semestre'];
+    protected $fillable = ['user_id', 'semestre', 'academic_program_id'];
 
     protected $searchableFields = ['*'];
 
@@ -25,8 +25,8 @@ class Student extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

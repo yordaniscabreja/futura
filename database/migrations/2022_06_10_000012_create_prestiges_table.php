@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('imagen_egresado');
             $table->double('asociaciones_externas');
             $table->double('bolsa_empleo');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

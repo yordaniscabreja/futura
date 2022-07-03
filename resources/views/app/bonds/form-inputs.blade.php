@@ -13,10 +13,14 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="agreement_id" label="Convenio" required>
-            @php $selected = old('agreement_id', ($editing ? $bond->agreement_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Seleccione el convenio</option>
-            @foreach($agreements as $value => $label)
+        <x-inputs.select
+            name="academic_program_id"
+            label="Programa académico"
+            required
+        >
+            @php $selected = old('academic_program_id', ($editing ? $bond->academic_program_id : '')) @endphp
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Seleccione el programa</option>
+            @foreach($academicPrograms as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
         </x-inputs.select>

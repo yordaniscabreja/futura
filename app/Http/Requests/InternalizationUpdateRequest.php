@@ -29,7 +29,10 @@ class InternalizationUpdateRequest extends FormRequest
             'relevancia_internacional' => ['required', 'numeric'],
             'convenios_internacionales' => ['required', 'numeric'],
             'segundo_idioma' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

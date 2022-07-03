@@ -48,7 +48,7 @@
                                 @lang('crud.becas.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.becas.inputs.university_id')
+                                @lang('crud.becas.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -60,7 +60,8 @@
                         <tr>
                             <td>{{ $beca->name ?? '-' }}</td>
                             <td>
-                                {{ optional($beca->university)->name ?? '-' }}
+                                {{ optional($beca->academicProgram)->name ?? '-'
+                                }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

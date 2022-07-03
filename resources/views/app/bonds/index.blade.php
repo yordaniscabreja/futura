@@ -48,7 +48,7 @@
                                 @lang('crud.bonos.inputs.name')
                             </th>
                             <th class="text-left">
-                                @lang('crud.bonos.inputs.agreement_id')
+                                @lang('crud.bonos.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -60,7 +60,8 @@
                         <tr>
                             <td>{{ $bond->name ?? '-' }}</td>
                             <td>
-                                {{ optional($bond->agreement)->name ?? '-' }}
+                                {{ optional($bond->academicProgram)->name ?? '-'
+                                }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

@@ -44,16 +44,30 @@ class CityUniversitiesController extends Controller
             'oficial' => ['required', 'boolean'],
             'acreditada' => ['required', 'boolean'],
             'principal' => ['required', 'boolean'],
-            'url' => ['required', 'url'],
             'direccion' => ['required', 'max:255', 'string'],
             'fundada_at' => ['required', 'date'],
             'egresados' => ['required', 'numeric'],
-            'description' => ['required', 'max:255', 'string'],
-            'image' => ['nullable', 'image', 'max:1024'],
+            'general_description' => ['required', 'max:255', 'string'],
+            'logo' => ['image', 'max:1024', 'nullable'],
+            'url' => ['required', 'url'],
+            'about_video_url' => ['file', 'max:1024', 'required'],
+            'background_image' => ['image', 'max:1024', 'required'],
         ]);
 
-        if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('public');
+        if ($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('public');
+        }
+
+        if ($request->hasFile('about_video_url')) {
+            $validated['about_video_url'] = $request
+                ->file('about_video_url')
+                ->store('public');
+        }
+
+        if ($request->hasFile('background_image')) {
+            $validated['background_image'] = $request
+                ->file('background_image')
+                ->store('public');
         }
 
         $university = $city->universities()->create($validated);

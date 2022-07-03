@@ -17,8 +17,11 @@
                     <span>{{ $bond->name ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.bonos.inputs.agreement_id')</h5>
-                    <span>{{ optional($bond->agreement)->name ?? '-' }}</span>
+                    <h5>@lang('crud.bonos.inputs.academic_program_id')</h5>
+                    <span
+                        >{{ optional($bond->academicProgram)->name ?? '-'
+                        }}</span
+                    >
                 </div>
             </div>
 

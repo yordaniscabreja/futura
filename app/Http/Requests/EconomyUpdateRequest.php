@@ -29,7 +29,10 @@ class EconomyUpdateRequest extends FormRequest
             'costos_calidad' => ['required', 'numeric'],
             'costos_manutencion' => ['required', 'numeric'],
             'costos_parqueadero' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

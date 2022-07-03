@@ -24,7 +24,7 @@ class BecaFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

@@ -29,7 +29,10 @@ class LifeStyleUpdateRequest extends FormRequest
             'descanso_relax' => ['required', 'numeric'],
             'cultura_ecologica' => ['required', 'numeric'],
             'servicio_estudiante' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

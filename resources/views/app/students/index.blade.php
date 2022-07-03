@@ -53,7 +53,7 @@
                                 @lang('crud.estudiantes.inputs.user_id')
                             </th>
                             <th class="text-left">
-                                @lang('crud.estudiantes.inputs.university_id')
+                                @lang('crud.estudiantes.inputs.academic_program_id')
                             </th>
                             <th class="text-right">
                                 @lang('crud.estudiantes.inputs.semestre')
@@ -68,8 +68,8 @@
                         <tr>
                             <td>{{ optional($student->user)->name ?? '-' }}</td>
                             <td>
-                                {{ optional($student->university)->name ?? '-'
-                                }}
+                                {{ optional($student->academicProgram)->name ??
+                                '-' }}
                             </td>
                             <td>{{ $student->semestre ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">

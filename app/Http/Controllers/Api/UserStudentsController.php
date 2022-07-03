@@ -40,7 +40,10 @@ class UserStudentsController extends Controller
         $this->authorize('create', Student::class);
 
         $validated = $request->validate([
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
             'semestre' => ['required', 'numeric'],
         ]);
 

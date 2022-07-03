@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('costos_calidad');
             $table->double('costos_manutencion');
             $table->double('costos_parqueadero');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

@@ -17,13 +17,13 @@ class Prestige extends Model
         'imagen_egresado',
         'asociaciones_externas',
         'bolsa_empleo',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

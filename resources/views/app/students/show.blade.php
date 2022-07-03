@@ -17,9 +17,12 @@
                     <span>{{ optional($student->user)->name ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.estudiantes.inputs.university_id')</h5>
+                    <h5>
+                        @lang('crud.estudiantes.inputs.academic_program_id')
+                    </h5>
                     <span
-                        >{{ optional($student->university)->name ?? '-' }}</span
+                        >{{ optional($student->academicProgram)->name ?? '-'
+                        }}</span
                     >
                 </div>
                 <div class="mb-4">

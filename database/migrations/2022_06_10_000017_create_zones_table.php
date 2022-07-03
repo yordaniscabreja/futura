@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('opciones_parqueo');
             $table->double('opciones_vivir');
             $table->double('opciones_comer');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

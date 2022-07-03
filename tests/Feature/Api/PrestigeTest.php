@@ -5,7 +5,7 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Prestige;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -61,7 +61,7 @@ class PrestigeTest extends TestCase
     {
         $prestige = Prestige::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'reputacion_institucional' => $this->faker->randomNumber(2),
@@ -69,7 +69,7 @@ class PrestigeTest extends TestCase
             'imagen_egresado' => $this->faker->randomNumber(2),
             'asociaciones_externas' => $this->faker->randomNumber(2),
             'bolsa_empleo' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->putJson(

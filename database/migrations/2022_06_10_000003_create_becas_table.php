@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('becas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

@@ -24,7 +24,7 @@ class BondFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'agreement_id' => \App\Models\Agreement::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

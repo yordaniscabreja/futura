@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Economy;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\EconomyStoreRequest;
 use App\Http\Requests\EconomyUpdateRequest;
 
@@ -36,9 +36,9 @@ class EconomyController extends Controller
     {
         $this->authorize('create', Economy::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.economies.create', compact('universities'));
+        return view('app.economies.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,12 @@ class EconomyController extends Controller
     {
         $this->authorize('update', $economy);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.economies.edit', compact('economy', 'universities'));
+        return view(
+            'app.economies.edit',
+            compact('economy', 'academicPrograms')
+        );
     }
 
     /**

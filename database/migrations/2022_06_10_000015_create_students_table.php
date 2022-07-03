@@ -15,8 +15,8 @@ return new class extends Migration {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('university_id');
             $table->integer('semestre');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

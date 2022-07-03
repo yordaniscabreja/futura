@@ -63,10 +63,14 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="university_id" label="University" required>
-            @php $selected = old('university_id', ($editing ? $internalization->university_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the University</option>
-            @foreach($universities as $value => $label)
+        <x-inputs.select
+            name="academic_program_id"
+            label="Progrma académico"
+            required
+        >
+            @php $selected = old('academic_program_id', ($editing ? $internalization->academic_program_id : '')) @endphp
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Seleccione el programa</option>
+            @foreach($academicPrograms as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
         </x-inputs.select>

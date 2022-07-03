@@ -28,7 +28,7 @@ class AcademyFactory extends Factory
             'tecnologia' => $this->faker->randomNumber(2),
             'tamano_grupos' => $this->faker->randomNumber(2),
             'excelencia_profesores' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

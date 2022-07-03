@@ -29,7 +29,10 @@ class AcademyUpdateRequest extends FormRequest
             'tecnologia' => ['required', 'numeric'],
             'tamano_grupos' => ['required', 'numeric'],
             'excelencia_profesores' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

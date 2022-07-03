@@ -17,13 +17,13 @@ class Zone extends Model
         'opciones_parqueo',
         'opciones_vivir',
         'opciones_comer',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

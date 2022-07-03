@@ -29,7 +29,10 @@ class WellnessStoreRequest extends FormRequest
             'actividades_culturales' => ['required', 'numeric'],
             'plan_covid19' => ['required', 'numeric'],
             'felicidad_entorno' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

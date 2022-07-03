@@ -11,14 +11,9 @@ class Beca extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['name', 'university_id'];
+    protected $fillable = ['name', 'academic_program_id'];
 
     protected $searchableFields = ['*'];
-
-    public function university()
-    {
-        return $this->belongsTo(University::class);
-    }
 
     public function requeriments()
     {
@@ -28,5 +23,10 @@ class Beca extends Model
     public function benefits()
     {
         return $this->hasMany(Benefit::class);
+    }
+
+    public function academicProgram()
+    {
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

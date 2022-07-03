@@ -5,7 +5,7 @@ namespace Tests\Feature\Controllers;
 use App\Models\User;
 use App\Models\Student;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -111,12 +111,12 @@ class StudentControllerTest extends TestCase
         $student = Student::factory()->create();
 
         $user = User::factory()->create();
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'semestre' => $this->faker->randomNumber(0),
             'user_id' => $user->id,
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->put(route('students.update', $student), $data);

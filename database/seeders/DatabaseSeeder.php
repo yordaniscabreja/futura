@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CampusSeeder::class);
         $this->call(CitySeeder::class);
         $this->call(CommentSeeder::class);
+        $this->call(ConvenioSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(DepartmentSeeder::class);
         $this->call(EconomySeeder::class);

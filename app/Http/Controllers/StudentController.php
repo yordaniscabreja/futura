@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Student;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\StudentStoreRequest;
 use App\Http\Requests\StudentUpdateRequest;
 
@@ -38,9 +38,12 @@ class StudentController extends Controller
         $this->authorize('create', Student::class);
 
         $users = User::pluck('name', 'id');
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.students.create', compact('users', 'universities'));
+        return view(
+            'app.students.create',
+            compact('users', 'academicPrograms')
+        );
     }
 
     /**
@@ -82,11 +85,11 @@ class StudentController extends Controller
         $this->authorize('update', $student);
 
         $users = User::pluck('name', 'id');
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
         return view(
             'app.students.edit',
-            compact('student', 'users', 'universities')
+            compact('student', 'users', 'academicPrograms')
         );
     }
 

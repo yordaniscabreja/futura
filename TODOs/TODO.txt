@@ -1,0 +1,68 @@
+Sección Sombrilla Detalle Universidad.
+Datos que no llegan
+Logo – Logo Universidad  ///el campo de la DB se llama image
+background_image – Imagen de Fondo  /TODO: Añadir este campo
+about_video_url – Video Universidad /TODO: Añadir este campo
+city_id (Enviar Arreglo Con la Cuidad Slider /TODO añadir la ciudad
+virtual_program_information (Esta información es sobre si Ofrecen  Programas Virtuales) Slider /TODO: Devolver los programas virtuales de la uni
+title_information (Informacion Corta sobre títulos que se otorgan) Slider //Espera a que se aclare la duda. A lo mejor se puede forma de los datos de un programa
+campuses (Aquí vendría la Sede) Slider /TODO: Revisar en la vista. Deben ser la sede con todas las dependencias
+study_pace (Eso es como una promoción aprende a tu ritmo) Slider
+programas [] (traer arreglo de //Combinar con los programas virtuales
+o"academic_level_id": 11,
+o"modality_id": 8,
+o"education_level_id": 12,)(Esos que te pongo son los que tienen id como los niveles que se necesitan dentro apra poder hacer filtros del lado del front)
+Convenio //TODO: Añadir nuevo a la DB
+convenios[
+title
+image
+about
+]
+
+DIMENSIONES: Añadir las dimensiones por programas. Actualmente están relacionadas a la UNIVERSIDAD
+Bienestar (Por definir, no aparece en data[], está pintado con un texto de prueba)
+Becas - Bonos (Por definir, no aparece en data[], está pintado con un texto de prueba) //Esperar aclaración de dudas sobre si esta relacionada con la uni o los programas
+General
+rating (No viene) //TODO: Calculo de promedios de dimensiones
+average_description (Una descripción) //Esperar a que se aclare la duda
+//TODO: DIMENSIONES: Añadir las dimensiones por programas. Actualmente están relacionadas a la UNIVERSIDAD
+
+dimensions [
+otext (Descripción Evaluación: Campo, Academia, etc (No viene de DB))
+on (Puntuación Evaluación: Campo, Academia, etc(No viene de DB))] (El arreglo no viene de BD)
+Zonas 
+zones [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+Campus
+campuses [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+
+Academia
+academies [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+Prestigios
+prestigies [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+Internacionalización
+internacionalizations [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+Presupuesto 
+budgets [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+Estilos de Vida
+lifestyles [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+Bienestar
+wellnes [id, text, n] (Debe venir por arreglos de Cada aspecto a evaluar)
+general_description (Esto es un texto que debe hablar sobre esas valoraciones anteriores)
+Comentarios[{
+oname,
+olastName,
+osemestre(Siempre llega null)
+ocarrera (Aquí viene siendo el programa que cursa el estudiante para mostrarlo junto al Semestre, si tiene relación mandarlo en un arreglo para obtener el nombre)
+omessage}] (Aquí van los comnetarios Generales, si hay sobre un programa va en la próxima vista, ahí sí no sé cómo será en la BD, pero debe llegar un arreglo y agregarle la carrera o programa en el que está el estudiante)
+Galería 
+about_video_url //TODO: Este campo añadirlo a la UNI. Enviar todas las multimedias
+images (Llegaban en un listado separados por “,” (${apiUrl}storage/${item}))
+rectors[{ //TODO: Devolver en el arreglo de la universidad una colección con las rectorias
+name,
+lastname,
+position,
+image,
+about}]
+Con todo eso Terminamos de Pintar esta vista, y entraríamos en los programas y ahí haríamos las valoraciones como lo vimos hoy, pero vamos dejando esto funcional.
+
+Alayn

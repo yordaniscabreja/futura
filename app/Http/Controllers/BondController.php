@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bond;
-use App\Models\Agreement;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\BondStoreRequest;
 use App\Http\Requests\BondUpdateRequest;
 
@@ -36,9 +36,9 @@ class BondController extends Controller
     {
         $this->authorize('create', Bond::class);
 
-        $agreements = Agreement::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.bonds.create', compact('agreements'));
+        return view('app.bonds.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,9 @@ class BondController extends Controller
     {
         $this->authorize('update', $bond);
 
-        $agreements = Agreement::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.bonds.edit', compact('bond', 'agreements'));
+        return view('app.bonds.edit', compact('bond', 'academicPrograms'));
     }
 
     /**

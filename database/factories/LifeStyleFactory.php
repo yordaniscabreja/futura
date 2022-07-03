@@ -28,7 +28,7 @@ class LifeStyleFactory extends Factory
             'descanso_relax' => $this->faker->randomNumber(2),
             'cultura_ecologica' => $this->faker->randomNumber(2),
             'servicio_estudiante' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

@@ -65,7 +65,7 @@
                                 @lang('crud.dimensi_n_academia.inputs.excelencia_profesores')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_academia.inputs.university_id')
+                                @lang('crud.dimensi_n_academia.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -83,8 +83,8 @@
                                 {{ $academy->excelencia_profesores ?? '-' }}
                             </td>
                             <td>
-                                {{ optional($academy->university)->name ?? '-'
-                                }}
+                                {{ optional($academy->academicProgram)->name ??
+                                '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

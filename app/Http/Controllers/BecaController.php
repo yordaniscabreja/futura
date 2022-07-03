@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beca;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\BecaStoreRequest;
 use App\Http\Requests\BecaUpdateRequest;
 
@@ -36,9 +36,9 @@ class BecaController extends Controller
     {
         $this->authorize('create', Beca::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.becas.create', compact('universities'));
+        return view('app.becas.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,9 @@ class BecaController extends Controller
     {
         $this->authorize('update', $beca);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.becas.edit', compact('beca', 'universities'));
+        return view('app.becas.edit', compact('beca', 'academicPrograms'));
     }
 
     /**

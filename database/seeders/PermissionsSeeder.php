@@ -81,6 +81,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update comments']);
         Permission::create(['name' => 'delete comments']);
 
+        Permission::create(['name' => 'list convenios']);
+        Permission::create(['name' => 'view convenios']);
+        Permission::create(['name' => 'create convenios']);
+        Permission::create(['name' => 'update convenios']);
+        Permission::create(['name' => 'delete convenios']);
+
         Permission::create(['name' => 'list countries']);
         Permission::create(['name' => 'view countries']);
         Permission::create(['name' => 'create countries']);

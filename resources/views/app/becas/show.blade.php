@@ -17,8 +17,11 @@
                     <span>{{ $beca->name ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.becas.inputs.university_id')</h5>
-                    <span>{{ optional($beca->university)->name ?? '-' }}</span>
+                    <h5>@lang('crud.becas.inputs.academic_program_id')</h5>
+                    <span
+                        >{{ optional($beca->academicProgram)->name ?? '-'
+                        }}</span
+                    >
                 </div>
             </div>
 

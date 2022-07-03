@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('tecnologia');
             $table->double('tamano_grupos');
             $table->double('excelencia_profesores');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

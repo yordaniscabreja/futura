@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('relevancia_internacional');
             $table->double('convenios_internacionales');
             $table->double('segundo_idioma');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

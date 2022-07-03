@@ -4,19 +4,23 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Nombre"
+            label="Beca"
             value="{{ old('name', ($editing ? $beca->name : '')) }}"
             maxlength="255"
-            placeholder="Ej: Beca FUTURA"
+            placeholder="Ej: Beca de Enfermería"
             required
         ></x-inputs.text>
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="university_id" label="Universidad" required>
-            @php $selected = old('university_id', ($editing ? $beca->university_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Seleccione una universidad</option>
-            @foreach($universities as $value => $label)
+        <x-inputs.select
+            name="academic_program_id"
+            label="Programa académico"
+            required
+        >
+            @php $selected = old('academic_program_id', ($editing ? $beca->academic_program_id : '')) @endphp
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Seleccione el programa académico</option>
+            @foreach($academicPrograms as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
         </x-inputs.select>

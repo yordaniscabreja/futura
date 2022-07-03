@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Zone;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\ZoneStoreRequest;
 use App\Http\Requests\ZoneUpdateRequest;
 
@@ -36,9 +36,9 @@ class ZoneController extends Controller
     {
         $this->authorize('create', Zone::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.zones.create', compact('universities'));
+        return view('app.zones.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,9 @@ class ZoneController extends Controller
     {
         $this->authorize('update', $zone);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.zones.edit', compact('zone', 'universities'));
+        return view('app.zones.edit', compact('zone', 'academicPrograms'));
     }
 
     /**

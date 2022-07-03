@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\University;
 use Illuminate\Http\Request;
 use App\Models\Internalization;
+use App\Models\AcademicProgram;
 use App\Http\Requests\InternalizationStoreRequest;
 use App\Http\Requests\InternalizationUpdateRequest;
 
@@ -39,9 +39,9 @@ class InternalizationController extends Controller
     {
         $this->authorize('create', Internalization::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.internalizations.create', compact('universities'));
+        return view('app.internalizations.create', compact('academicPrograms'));
     }
 
     /**
@@ -82,11 +82,11 @@ class InternalizationController extends Controller
     {
         $this->authorize('update', $internalization);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
         return view(
             'app.internalizations.edit',
-            compact('internalization', 'universities')
+            compact('internalization', 'academicPrograms')
         );
     }
 

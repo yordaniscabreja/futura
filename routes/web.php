@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CityController;
-use App\Http\Controllers\BecaController;
-use App\Http\Controllers\BondController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZoneController;
+use App\Http\Controllers\BecaController;
+use App\Http\Controllers\BondController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\CampusController;
@@ -20,6 +20,7 @@ use App\Http\Controllers\ModalityController;
 use App\Http\Controllers\PrestigeController;
 use App\Http\Controllers\RectoriaController;
 use App\Http\Controllers\WellnessController;
+use App\Http\Controllers\ConvenioController;
 use App\Http\Controllers\AgreementController;
 use App\Http\Controllers\BasicCoreController;
 use App\Http\Controllers\LifeStyleController;
@@ -67,9 +68,7 @@ Route::prefix('/')
         Route::resource('academies', AcademyController::class);
         Route::resource('agreements', AgreementController::class);
         Route::resource('basic-cores', BasicCoreController::class);
-        Route::resource('becas', BecaController::class);
         Route::resource('benefits', BenefitController::class);
-        Route::resource('bonds', BondController::class);
         Route::resource('comments', CommentController::class);
         Route::resource('internalizations', InternalizationController::class);
         Route::resource('education-levels', EducationLevelController::class);
@@ -86,7 +85,6 @@ Route::prefix('/')
         Route::resource('users', UserController::class);
         Route::resource('wellnesses', WellnessController::class);
         Route::resource('zones', ZoneController::class);
-        Route::resource('universities', UniversityController::class);
         Route::get('all-media', [MediaController::class, 'index'])->name(
             'all-media.index'
         );
@@ -112,4 +110,9 @@ Route::prefix('/')
             MediaController::class,
             'destroy',
         ])->name('all-media.destroy');
+
+        Route::resource('becas', BecaController::class);
+        Route::resource('bonds', BondController::class);
+        Route::resource('convenios', ConvenioController::class);
+        Route::resource('universities', UniversityController::class);
     });

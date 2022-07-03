@@ -28,7 +28,7 @@ class WellnessFactory extends Factory
             'actividades_culturales' => $this->faker->randomNumber(2),
             'plan_covid19' => $this->faker->randomNumber(2),
             'felicidad_entorno' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

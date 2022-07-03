@@ -28,7 +28,7 @@ class CampusFactory extends Factory
             'laboratorios' => $this->faker->randomNumber(2),
             'cafeterias_restaurantes' => $this->faker->randomNumber(2),
             'espacios_comunes' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

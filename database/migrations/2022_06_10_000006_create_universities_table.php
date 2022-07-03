@@ -22,9 +22,11 @@ return new class extends Migration {
             $table->string('url');
             $table->longText('direccion');
             $table->timestamp('fundada_at');
-            $table->integer('egresados');
-            $table->text('description');
-            $table->string('image')->nullable();
+            $table->double('egresados');
+            $table->text('general_description');
+            $table->string('logo')->nullable();
+            $table->string('background_image');
+            $table->string('about_video_url');
 
             $table->timestamps();
         });

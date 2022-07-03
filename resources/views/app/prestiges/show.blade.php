@@ -46,10 +46,10 @@
                 </div>
                 <div class="mb-4">
                     <h5>
-                        @lang('crud.dimensi_n_prestigio.inputs.university_id')
+                        @lang('crud.dimensi_n_prestigio.inputs.academic_program_id')
                     </h5>
                     <span
-                        >{{ optional($prestige->university)->name ?? '-'
+                        >{{ optional($prestige->academicProgram)->name ?? '-'
                         }}</span
                     >
                 </div>

@@ -26,9 +26,4 @@ class Agreement extends Model
     {
         return $this->belongsTo(University::class);
     }
-
-    public function bonuses()
-    {
-        return $this->hasMany(Bond::class);
-    }
 }

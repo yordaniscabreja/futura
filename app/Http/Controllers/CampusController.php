@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Campus;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\CampusStoreRequest;
 use App\Http\Requests\CampusUpdateRequest;
 
@@ -36,9 +36,9 @@ class CampusController extends Controller
     {
         $this->authorize('create', Campus::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.campuses.create', compact('universities'));
+        return view('app.campuses.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,9 @@ class CampusController extends Controller
     {
         $this->authorize('update', $campus);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.campuses.edit', compact('campus', 'universities'));
+        return view('app.campuses.edit', compact('campus', 'academicPrograms'));
     }
 
     /**

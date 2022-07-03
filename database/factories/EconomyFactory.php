@@ -28,7 +28,7 @@ class EconomyFactory extends Factory
             'costos_calidad' => $this->faker->randomNumber(2),
             'costos_manutencion' => $this->faker->randomNumber(2),
             'costos_parqueadero' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

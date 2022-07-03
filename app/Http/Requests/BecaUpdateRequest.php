@@ -25,7 +25,10 @@ class BecaUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

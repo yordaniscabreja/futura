@@ -33,12 +33,6 @@
                     <span>{{ $university->principal ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.universidades.inputs.url')</h5>
-                    <a target="_blank" href="{{ $university->url }}"
-                        >{{ $university->url ?? '-' }}</a
-                    >
-                </div>
-                <div class="mb-4">
                     <h5>@lang('crud.universidades.inputs.direccion')</h5>
                     <span>{{ $university->direccion ?? '-' }}</span>
                 </div>
@@ -51,13 +45,38 @@
                     <span>{{ $university->egresados ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.universidades.inputs.description')</h5>
-                    <span>{{ $university->description ?? '-' }}</span>
+                    <h5>
+                        @lang('crud.universidades.inputs.general_description')
+                    </h5>
+                    <span>{{ $university->general_description ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.universidades.inputs.image')</h5>
+                    <h5>@lang('crud.universidades.inputs.logo')</h5>
                     <x-partials.thumbnail
-                        src="{{ $university->image ? \Storage::url($university->image) : '' }}"
+                        src="{{ $university->logo ? \Storage::url($university->logo) : '' }}"
+                        size="150"
+                    />
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.universidades.inputs.url')</h5>
+                    <a target="_blank" href="{{ $university->url }}"
+                        >{{ $university->url ?? '-' }}</a
+                    >
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.universidades.inputs.about_video_url')</h5>
+                    @if($university->about_video_url)
+                    <a
+                        href="{{ \Storage::url($university->about_video_url) }}"
+                        target="blank"
+                        ><i class="icon ion-md-download"></i>&nbsp;Download</a
+                    >
+                    @else - @endif
+                </div>
+                <div class="mb-4">
+                    <h5>@lang('crud.universidades.inputs.background_image')</h5>
+                    <x-partials.thumbnail
+                        src="{{ $university->background_image ? \Storage::url($university->background_image) : '' }}"
                         size="150"
                     />
                 </div>

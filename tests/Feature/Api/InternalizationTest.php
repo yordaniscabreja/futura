@@ -5,7 +5,7 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Internalization;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -61,7 +61,7 @@ class InternalizationTest extends TestCase
     {
         $internalization = Internalization::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'intercambios_movilidad' => $this->faker->randomNumber(2),
@@ -69,7 +69,7 @@ class InternalizationTest extends TestCase
             'relevancia_internacional' => $this->faker->randomNumber(2),
             'convenios_internacionales' => $this->faker->randomNumber(2),
             'segundo_idioma' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->putJson(

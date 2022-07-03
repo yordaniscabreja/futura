@@ -120,8 +120,10 @@ class UniversityControllerTest extends TestCase
             'url' => $this->faker->url,
             'direccion' => $this->faker->text,
             'fundada_at' => $this->faker->dateTime,
-            'egresados' => $this->faker->randomNumber(0),
-            'description' => $this->faker->sentence(15),
+            'egresados' => $this->faker->randomNumber(2),
+            'general_description' => $this->faker->sentence(15),
+            'background_image' => $this->faker->text(255),
+            'about_video_url' => $this->faker->text(255),
             'city_id' => $city->id,
         ];
 

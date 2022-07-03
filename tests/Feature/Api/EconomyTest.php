@@ -5,7 +5,7 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Economy;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -61,7 +61,7 @@ class EconomyTest extends TestCase
     {
         $economy = Economy::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'financiacion' => $this->faker->randomNumber(2),
@@ -69,7 +69,7 @@ class EconomyTest extends TestCase
             'costos_calidad' => $this->faker->randomNumber(2),
             'costos_manutencion' => $this->faker->randomNumber(2),
             'costos_parqueadero' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->putJson(

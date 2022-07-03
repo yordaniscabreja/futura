@@ -62,7 +62,7 @@
                                 @lang('crud.dimensi_n_zonas.inputs.opciones_comer')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_zonas.inputs.university_id')
+                                @lang('crud.dimensi_n_zonas.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -78,7 +78,8 @@
                             <td>{{ $zone->opciones_vivir ?? '-' }}</td>
                             <td>{{ $zone->opciones_comer ?? '-' }}</td>
                             <td>
-                                {{ optional($zone->university)->name ?? '-' }}
+                                {{ optional($zone->academicProgram)->name ?? '-'
+                                }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

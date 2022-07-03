@@ -5,7 +5,7 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Wellness;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -61,7 +61,7 @@ class WellnessTest extends TestCase
     {
         $wellness = Wellness::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'orientacion_psicologia' => $this->faker->randomNumber(2),
@@ -69,7 +69,7 @@ class WellnessTest extends TestCase
             'actividades_culturales' => $this->faker->randomNumber(2),
             'plan_covid19' => $this->faker->randomNumber(2),
             'felicidad_entorno' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->putJson(

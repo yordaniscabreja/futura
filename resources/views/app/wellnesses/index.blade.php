@@ -65,7 +65,7 @@
                                 @lang('crud.dimensi_n_bienestar.inputs.felicidad_entorno')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_bienestar.inputs.university_id')
+                                @lang('crud.dimensi_n_bienestar.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -87,8 +87,8 @@
                             <td>{{ $wellness->plan_covid19 ?? '-' }}</td>
                             <td>{{ $wellness->felicidad_entorno ?? '-' }}</td>
                             <td>
-                                {{ optional($wellness->university)->name ?? '-'
-                                }}
+                                {{ optional($wellness->academicProgram)->name ??
+                                '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

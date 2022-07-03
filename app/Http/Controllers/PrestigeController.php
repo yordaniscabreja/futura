@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prestige;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\PrestigeStoreRequest;
 use App\Http\Requests\PrestigeUpdateRequest;
 
@@ -36,9 +36,9 @@ class PrestigeController extends Controller
     {
         $this->authorize('create', Prestige::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.prestiges.create', compact('universities'));
+        return view('app.prestiges.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,12 @@ class PrestigeController extends Controller
     {
         $this->authorize('update', $prestige);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.prestiges.edit', compact('prestige', 'universities'));
+        return view(
+            'app.prestiges.edit',
+            compact('prestige', 'academicPrograms')
+        );
     }
 
     /**

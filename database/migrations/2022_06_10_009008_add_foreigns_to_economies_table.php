@@ -14,9 +14,9 @@ return new class extends Migration {
     {
         Schema::table('economies', function (Blueprint $table) {
             $table
-                ->foreign('university_id')
+                ->foreign('academic_program_id')
                 ->references('id')
-                ->on('universities')
+                ->on('academic_programs')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
         });
@@ -30,7 +30,7 @@ return new class extends Migration {
     public function down()
     {
         Schema::table('economies', function (Blueprint $table) {
-            $table->dropForeign(['university_id']);
+            $table->dropForeign(['academic_program_id']);
         });
     }
 };

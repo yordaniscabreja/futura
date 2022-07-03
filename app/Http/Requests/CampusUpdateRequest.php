@@ -29,7 +29,10 @@ class CampusUpdateRequest extends FormRequest
             'laboratorios' => ['required', 'numeric'],
             'cafeterias_restaurantes' => ['required', 'numeric'],
             'espacios_comunes' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

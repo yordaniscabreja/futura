@@ -17,13 +17,13 @@ class Economy extends Model
         'costos_calidad',
         'costos_manutencion',
         'costos_parqueadero',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

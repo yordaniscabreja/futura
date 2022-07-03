@@ -28,7 +28,7 @@ class PrestigeFactory extends Factory
             'imagen_egresado' => $this->faker->randomNumber(2),
             'asociaciones_externas' => $this->faker->randomNumber(2),
             'bolsa_empleo' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

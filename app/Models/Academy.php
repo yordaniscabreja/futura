@@ -17,13 +17,13 @@ class Academy extends Model
         'tecnologia',
         'tamano_grupos',
         'excelencia_profesores',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

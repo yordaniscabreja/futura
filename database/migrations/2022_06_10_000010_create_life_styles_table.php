@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('descanso_relax');
             $table->double('cultura_ecologica');
             $table->double('servicio_estudiante');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

@@ -65,7 +65,7 @@
                                 @lang('crud.dimensi_n_internacionalizaci_n.inputs.segundo_idioma')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_internacionalizaci_n.inputs.university_id')
+                                @lang('crud.dimensi_n_internacionalizaci_n.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -94,7 +94,8 @@
                                 {{ $internalization->segundo_idioma ?? '-' }}
                             </td>
                             <td>
-                                {{ optional($internalization->university)->name
+                                {{
+                                optional($internalization->academicProgram)->name
                                 ?? '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">

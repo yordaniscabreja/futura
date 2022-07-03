@@ -17,15 +17,15 @@ class LifeStyle extends Model
         'descanso_relax',
         'cultura_ecologica',
         'servicio_estudiante',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
     protected $table = 'life_styles';
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

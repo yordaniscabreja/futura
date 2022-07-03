@@ -28,7 +28,7 @@ class ZoneFactory extends Factory
             'opciones_parqueo' => $this->faker->randomNumber(2),
             'opciones_vivir' => $this->faker->randomNumber(2),
             'opciones_comer' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

@@ -65,7 +65,7 @@
                                 @lang('crud.dimensi_n_presupuesto.inputs.costos_parqueadero')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_presupuesto.inputs.university_id')
+                                @lang('crud.dimensi_n_presupuesto.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -81,8 +81,8 @@
                             <td>{{ $economy->costos_manutencion ?? '-' }}</td>
                             <td>{{ $economy->costos_parqueadero ?? '-' }}</td>
                             <td>
-                                {{ optional($economy->university)->name ?? '-'
-                                }}
+                                {{ optional($economy->academicProgram)->name ??
+                                '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

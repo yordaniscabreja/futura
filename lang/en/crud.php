@@ -109,7 +109,7 @@ return [
             'tecnologia' => 'Tecnología',
             'tamano_grupos' => 'Tamaño Grupos',
             'excelencia_profesores' => 'Excelencia Profesores',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -143,19 +143,6 @@ return [
         ],
     ],
 
-    'becas' => [
-        'name' => 'Becas',
-        'index_title' => 'Listado de becas',
-        'new_title' => 'Nueva beca',
-        'create_title' => 'Crear beca',
-        'edit_title' => 'Ediat beca',
-        'show_title' => 'Mostrar beca',
-        'inputs' => [
-            'name' => 'Nombre',
-            'university_id' => 'Universidad',
-        ],
-    ],
-
     'beneficios' => [
         'name' => 'Beneficios',
         'index_title' => 'Listado de beneficios',
@@ -166,19 +153,6 @@ return [
         'inputs' => [
             'name' => 'Beneficio',
             'beca_id' => 'Beca',
-        ],
-    ],
-
-    'bonos' => [
-        'name' => 'Bonos',
-        'index_title' => 'Listado de bonos',
-        'new_title' => 'Nuevo bono',
-        'create_title' => 'Crear bono',
-        'edit_title' => 'Editar bono',
-        'show_title' => 'Mostrar bono',
-        'inputs' => [
-            'name' => 'Bono',
-            'agreement_id' => 'Convenio',
         ],
     ],
 
@@ -208,7 +182,7 @@ return [
             'relevancia_internacional' => 'Relevancia Internacional',
             'convenios_internacionales' => 'Convenios Internacionales',
             'segundo_idioma' => 'Segundo Idioma',
-            'university_id' => 'University',
+            'academic_program_id' => 'Progrma académico',
         ],
     ],
 
@@ -249,7 +223,7 @@ return [
             'descanso_relax' => 'Descanso y Relax',
             'cultura_ecologica' => 'Cultura Ecológica',
             'servicio_estudiante' => 'Servicio al Estudiante',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -287,10 +261,10 @@ return [
         'inputs' => [
             'reputacion_institucional' => 'Reputación Institucional',
             'practicas_profesionales' => 'Prácticas Profesionales',
-            'imagen_egresado' => 'Imágen del Egresado',
+            'imagen_egresado' => 'Imagen del Egresado',
             'asociaciones_externas' => 'Asociaciones Externas',
             'bolsa_empleo' => 'Bolsa de Empleo',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -307,7 +281,7 @@ return [
             'laboratorios' => 'Laboratorios',
             'cafeterias_restaurantes' => 'Cafeterias y Restaurantes',
             'espacios_comunes' => 'Espacios Comunes',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -324,7 +298,7 @@ return [
             'costos_calidad' => 'Costos vs Calidad',
             'costos_manutencion' => 'Costos de manutención',
             'costos_parqueadero' => 'Costos de parqueadero',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -366,7 +340,7 @@ return [
         'show_title' => 'Mostrar estudiante',
         'inputs' => [
             'user_id' => 'Usuario',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
             'semestre' => 'Semestre',
         ],
     ],
@@ -400,7 +374,7 @@ return [
             'actividades_culturales' => 'Actividades Culturales',
             'plan_covid19' => 'Plan Covid 19',
             'felicidad_entorno' => 'Felicidad y Entorno',
-            'university_id' => 'Universidad',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -417,29 +391,7 @@ return [
             'opciones_parqueo' => 'Opciones de Parqueo',
             'opciones_vivir' => 'Opciones para Vivir',
             'opciones_comer' => 'Opciones para Comer',
-            'university_id' => 'Universidad',
-        ],
-    ],
-
-    'universidades' => [
-        'name' => 'Universidades',
-        'index_title' => 'Listado de universidades',
-        'new_title' => 'Nueva Universidad',
-        'create_title' => 'Crear Universidad',
-        'edit_title' => 'Editar Universidad',
-        'show_title' => 'Mostrar Universidad',
-        'inputs' => [
-            'name' => 'Nombre Universidad',
-            'oficial' => 'Es Oficial',
-            'acreditada' => 'Está Acreditada',
-            'city_id' => 'Ciudad domicilio',
-            'principal' => 'Es Principal',
-            'url' => 'WEB',
-            'direccion' => 'Dirección',
-            'fundada_at' => 'Fundada At',
-            'egresados' => 'Egresados',
-            'description' => 'Descripción',
-            'image' => 'Image',
+            'academic_program_id' => 'Programa académico',
         ],
     ],
 
@@ -456,6 +408,71 @@ return [
             'path' => 'ruta',
             'url' => 'Url',
             'media_type_id' => 'Tipo multimedia',
+        ],
+    ],
+
+    'becas' => [
+        'name' => 'Becas',
+        'index_title' => 'Listar becas ',
+        'new_title' => 'Nueva Beca',
+        'create_title' => 'Crear beca',
+        'edit_title' => 'Editar beca',
+        'show_title' => 'Mostrar beca',
+        'inputs' => [
+            'name' => 'Beca',
+            'academic_program_id' => 'Programa académico',
+        ],
+    ],
+
+    'bonos' => [
+        'name' => 'Bonos',
+        'index_title' => 'Listar bonos',
+        'new_title' => 'Nuevo bono',
+        'create_title' => 'Crear bono',
+        'edit_title' => 'Editar bono',
+        'show_title' => 'Mostrar bono',
+        'inputs' => [
+            'name' => 'Bono',
+            'academic_program_id' => 'Programa académico',
+        ],
+    ],
+
+    'convenios_universidades' => [
+        'name' => 'Convenios Universidades',
+        'index_title' => 'Listar convenios',
+        'new_title' => 'Nuevo convenio',
+        'create_title' => 'Crear convenio',
+        'edit_title' => 'Editar convenio',
+        'show_title' => 'Mostrar convenio',
+        'inputs' => [
+            'title' => 'Título',
+            'image' => 'Imagen',
+            'about' => 'Descripción',
+            'university_id' => 'Universidad',
+        ],
+    ],
+
+    'universidades' => [
+        'name' => 'Universidades',
+        'index_title' => 'Listar universidades',
+        'new_title' => 'Nueva universidad',
+        'create_title' => 'Crer universidad',
+        'edit_title' => 'Editar uiversidad',
+        'show_title' => 'Mostrar universidad',
+        'inputs' => [
+            'name' => 'Nombre de la Universidad',
+            'oficial' => 'Es oficial',
+            'acreditada' => 'Está acreditada',
+            'city_id' => 'Ciudad',
+            'principal' => 'Es principal',
+            'direccion' => 'Dirección Domicilio',
+            'fundada_at' => 'Fecha de fundación',
+            'egresados' => 'Egresados',
+            'general_description' => 'Descripción general',
+            'logo' => 'Logo',
+            'url' => 'Web',
+            'about_video_url' => 'Video promocional',
+            'background_image' => 'Imagen de fondo',
         ],
     ],
 

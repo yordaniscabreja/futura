@@ -5,7 +5,7 @@ namespace Tests\Feature\Controllers;
 use App\Models\User;
 use App\Models\Campus;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -110,7 +110,7 @@ class CampusControllerTest extends TestCase
     {
         $campus = Campus::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'conectividad' => $this->faker->randomNumber(2),
@@ -118,7 +118,7 @@ class CampusControllerTest extends TestCase
             'laboratorios' => $this->faker->randomNumber(2),
             'cafeterias_restaurantes' => $this->faker->randomNumber(2),
             'espacios_comunes' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->put(route('campuses.update', $campus), $data);

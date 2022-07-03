@@ -17,13 +17,13 @@ class Wellness extends Model
         'actividades_culturales',
         'plan_covid19',
         'felicidad_entorno',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

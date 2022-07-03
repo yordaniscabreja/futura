@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Wellness;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\WellnessStoreRequest;
 use App\Http\Requests\WellnessUpdateRequest;
 
@@ -36,9 +36,9 @@ class WellnessController extends Controller
     {
         $this->authorize('create', Wellness::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.wellnesses.create', compact('universities'));
+        return view('app.wellnesses.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,12 @@ class WellnessController extends Controller
     {
         $this->authorize('update', $wellness);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.wellnesses.edit', compact('wellness', 'universities'));
+        return view(
+            'app.wellnesses.edit',
+            compact('wellness', 'academicPrograms')
+        );
     }
 
     /**

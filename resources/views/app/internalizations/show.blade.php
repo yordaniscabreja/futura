@@ -53,11 +53,11 @@
                 </div>
                 <div class="mb-4">
                     <h5>
-                        @lang('crud.dimensi_n_internacionalizaci_n.inputs.university_id')
+                        @lang('crud.dimensi_n_internacionalizaci_n.inputs.academic_program_id')
                     </h5>
                     <span
-                        >{{ optional($internalization->university)->name ?? '-'
-                        }}</span
+                        >{{ optional($internalization->academicProgram)->name ??
+                        '-' }}</span
                     >
                 </div>
             </div>

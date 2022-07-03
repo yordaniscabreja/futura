@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Academy;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\AcademyStoreRequest;
 use App\Http\Requests\AcademyUpdateRequest;
 
@@ -36,9 +36,9 @@ class AcademyController extends Controller
     {
         $this->authorize('create', Academy::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.academies.create', compact('universities'));
+        return view('app.academies.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,9 +79,12 @@ class AcademyController extends Controller
     {
         $this->authorize('update', $academy);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.academies.edit', compact('academy', 'universities'));
+        return view(
+            'app.academies.edit',
+            compact('academy', 'academicPrograms')
+        );
     }
 
     /**

@@ -11,12 +11,12 @@ class Bond extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['name', 'agreement_id'];
+    protected $fillable = ['name', 'academic_program_id'];
 
     protected $searchableFields = ['*'];
 
-    public function agreement()
+    public function academicProgram()
     {
-        return $this->belongsTo(Agreement::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

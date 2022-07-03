@@ -17,13 +17,13 @@ class Internalization extends Model
         'relevancia_internacional',
         'convenios_internacionales',
         'segundo_idioma',
-        'university_id',
+        'academic_program_id',
     ];
 
     protected $searchableFields = ['*'];
 
-    public function university()
+    public function academicProgram()
     {
-        return $this->belongsTo(University::class);
+        return $this->belongsTo(AcademicProgram::class);
     }
 }

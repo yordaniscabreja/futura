@@ -18,7 +18,7 @@ class DepartmentController extends Controller
      */
     public function index(Request $request)
     {
-        //$this->authorize('view-any', Department::class);
+        $this->authorize('view-any', Department::class);
 
         $search = $request->get('search', '');
 

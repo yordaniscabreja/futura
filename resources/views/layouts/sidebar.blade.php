@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="{{ url('/') }}" class="brand-link">
         <img src="https://vemto.app/favicon.png" alt="Vemto Logo" class="brand-image bg-white img-circle">
-        <span class="brand-text font-weight-light">Futura2022Dev</span>
+        <span class="brand-text font-weight-light">futura</span>
     </a>
 
     <!-- Sidebar -->
@@ -96,27 +96,11 @@
                                 </a>
                             </li>
                             @endcan
-                            @can('view-any', App\Models\Beca::class)
-                            <li class="nav-item">
-                                <a href="{{ route('becas.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Becas</p>
-                                </a>
-                            </li>
-                            @endcan
                             @can('view-any', App\Models\Benefit::class)
                             <li class="nav-item">
                                 <a href="{{ route('benefits.index') }}" class="nav-link">
                                     <i class="nav-icon icon ion-md-radio-button-off"></i>
                                     <p>Beneficios</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Bond::class)
-                            <li class="nav-item">
-                                <a href="{{ route('bonds.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Bonos</p>
                                 </a>
                             </li>
                             @endcan
@@ -248,19 +232,43 @@
                                 </a>
                             </li>
                             @endcan
-                            @can('view-any', App\Models\University::class)
-                            <li class="nav-item">
-                                <a href="{{ route('universities.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Universidades</p>
-                                </a>
-                            </li>
-                            @endcan
                             @can('view-any', App\Models\Media::class)
                             <li class="nav-item">
                                 <a href="{{ route('all-media.index') }}" class="nav-link">
                                     <i class="nav-icon icon ion-md-radio-button-off"></i>
                                     <p>Multimedias</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Beca::class)
+                            <li class="nav-item">
+                                <a href="{{ route('becas.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Becas</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Bond::class)
+                            <li class="nav-item">
+                                <a href="{{ route('bonds.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Bonos</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\Convenio::class)
+                            <li class="nav-item">
+                                <a href="{{ route('convenios.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Convenios Universidades</p>
+                                </a>
+                            </li>
+                            @endcan
+                            @can('view-any', App\Models\University::class)
+                            <li class="nav-item">
+                                <a href="{{ route('universities.index') }}" class="nav-link">
+                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
+                                    <p>Universidades</p>
                                 </a>
                             </li>
                             @endcan

@@ -54,8 +54,20 @@ class UniversityController extends Controller
         $this->authorize('create', University::class);
 
         $validated = $request->validated();
-        if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('public');
+        if ($request->hasFile('logo')) {
+            $validated['logo'] = $request->file('logo')->store('public');
+        }
+
+        if ($request->hasFile('about_video_url')) {
+            $validated['about_video_url'] = $request
+                ->file('about_video_url')
+                ->store('public');
+        }
+
+        if ($request->hasFile('background_image')) {
+            $validated['background_image'] = $request
+                ->file('background_image')
+                ->store('public');
         }
 
         $university = University::create($validated);
@@ -103,12 +115,32 @@ class UniversityController extends Controller
         $this->authorize('update', $university);
 
         $validated = $request->validated();
-        if ($request->hasFile('image')) {
-            if ($university->image) {
-                Storage::delete($university->image);
+        if ($request->hasFile('logo')) {
+            if ($university->logo) {
+                Storage::delete($university->logo);
             }
 
-            $validated['image'] = $request->file('image')->store('public');
+            $validated['logo'] = $request->file('logo')->store('public');
+        }
+
+        if ($request->hasFile('about_video_url')) {
+            if ($university->about_video_url) {
+                Storage::delete($university->about_video_url);
+            }
+
+            $validated['about_video_url'] = $request
+                ->file('about_video_url')
+                ->store('public');
+        }
+
+        if ($request->hasFile('background_image')) {
+            if ($university->background_image) {
+                Storage::delete($university->background_image);
+            }
+
+            $validated['background_image'] = $request
+                ->file('background_image')
+                ->store('public');
         }
 
         $university->update($validated);
@@ -127,8 +159,16 @@ class UniversityController extends Controller
     {
         $this->authorize('delete', $university);
 
-        if ($university->image) {
-            Storage::delete($university->image);
+        if ($university->logo) {
+            Storage::delete($university->logo);
+        }
+
+        if ($university->about_video_url) {
+            Storage::delete($university->about_video_url);
+        }
+
+        if ($university->background_image) {
+            Storage::delete($university->background_image);
         }
 
         $university->delete();

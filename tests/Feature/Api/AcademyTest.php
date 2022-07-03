@@ -5,7 +5,7 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Academy;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -61,7 +61,7 @@ class AcademyTest extends TestCase
     {
         $academy = Academy::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'plan_estudio' => $this->faker->randomNumber(2),
@@ -69,7 +69,7 @@ class AcademyTest extends TestCase
             'tecnologia' => $this->faker->randomNumber(2),
             'tamano_grupos' => $this->faker->randomNumber(2),
             'excelencia_profesores' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->putJson(

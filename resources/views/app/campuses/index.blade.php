@@ -65,7 +65,7 @@
                                 @lang('crud.dimensi_n_campus_universitario.inputs.espacios_comunes')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_campus_universitario.inputs.university_id')
+                                @lang('crud.dimensi_n_campus_universitario.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -83,7 +83,8 @@
                             </td>
                             <td>{{ $campus->espacios_comunes ?? '-' }}</td>
                             <td>
-                                {{ optional($campus->university)->name ?? '-' }}
+                                {{ optional($campus->academicProgram)->name ??
+                                '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

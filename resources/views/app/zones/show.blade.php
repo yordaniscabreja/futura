@@ -37,8 +37,13 @@
                     <span>{{ $zone->opciones_comer ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
-                    <h5>@lang('crud.dimensi_n_zonas.inputs.university_id')</h5>
-                    <span>{{ optional($zone->university)->name ?? '-' }}</span>
+                    <h5>
+                        @lang('crud.dimensi_n_zonas.inputs.academic_program_id')
+                    </h5>
+                    <span
+                        >{{ optional($zone->academicProgram)->name ?? '-'
+                        }}</span
+                    >
                 </div>
             </div>
 

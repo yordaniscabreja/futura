@@ -5,7 +5,7 @@ namespace Tests\Feature\Controllers;
 use App\Models\User;
 use App\Models\Zone;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -110,7 +110,7 @@ class ZoneControllerTest extends TestCase
     {
         $zone = Zone::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'facilidad_transporte' => $this->faker->randomNumber(2),
@@ -118,7 +118,7 @@ class ZoneControllerTest extends TestCase
             'opciones_parqueo' => $this->faker->randomNumber(2),
             'opciones_vivir' => $this->faker->randomNumber(2),
             'opciones_comer' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->put(route('zones.update', $zone), $data);

@@ -28,7 +28,7 @@ class InternalizationFactory extends Factory
             'relevancia_internacional' => $this->faker->randomNumber(2),
             'convenios_internacionales' => $this->faker->randomNumber(2),
             'segundo_idioma' => $this->faker->randomNumber(2),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

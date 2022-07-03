@@ -29,7 +29,10 @@ class ZoneStoreRequest extends FormRequest
             'opciones_parqueo' => ['required', 'numeric'],
             'opciones_vivir' => ['required', 'numeric'],
             'opciones_comer' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

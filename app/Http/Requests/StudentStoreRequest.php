@@ -25,7 +25,10 @@ class StudentStoreRequest extends FormRequest
     {
         return [
             'user_id' => ['required', 'exists:users,id'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
             'semestre' => ['required', 'numeric'],
         ];
     }

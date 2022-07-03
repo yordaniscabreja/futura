@@ -29,7 +29,10 @@ class PrestigeUpdateRequest extends FormRequest
             'imagen_egresado' => ['required', 'numeric'],
             'asociaciones_externas' => ['required', 'numeric'],
             'bolsa_empleo' => ['required', 'numeric'],
-            'university_id' => ['required', 'exists:universities,id'],
+            'academic_program_id' => [
+                'required',
+                'exists:academic_programs,id',
+            ],
         ];
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('bonds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('agreement_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

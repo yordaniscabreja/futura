@@ -29,12 +29,14 @@ class UniversityUpdateRequest extends FormRequest
             'acreditada' => ['required', 'boolean'],
             'city_id' => ['required', 'exists:cities,id'],
             'principal' => ['required', 'boolean'],
-            'url' => ['required', 'url'],
             'direccion' => ['required', 'max:255', 'string'],
             'fundada_at' => ['required', 'date'],
             'egresados' => ['required', 'numeric'],
-            'description' => ['required', 'max:255', 'string'],
-            'image' => ['nullable', 'image', 'max:1024'],
+            'general_description' => ['required', 'max:255', 'string'],
+            'logo' => ['image', 'max:1024', 'nullable'],
+            'url' => ['required', 'url'],
+            'about_video_url' => ['file', 'max:1024', 'required'],
+            'background_image' => ['image', 'max:1024', 'required'],
         ];
     }
 }

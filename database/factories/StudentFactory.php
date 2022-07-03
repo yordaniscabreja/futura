@@ -25,7 +25,7 @@ class StudentFactory extends Factory
         return [
             'semestre' => $this->faker->randomNumber(0),
             'user_id' => \App\Models\User::factory(),
-            'university_id' => \App\Models\University::factory(),
+            'academic_program_id' => \App\Models\AcademicProgram::factory(),
         ];
     }
 }

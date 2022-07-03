@@ -59,4 +59,59 @@ class AcademicProgram extends Model
     {
         return $this->belongsTo(EducationLevel::class);
     }
+
+    public function economies()
+    {
+        return $this->hasMany(Economy::class);
+    }
+
+    public function lifeStyles()
+    {
+        return $this->hasMany(LifeStyle::class);
+    }
+
+    public function wellnesses()
+    {
+        return $this->hasMany(Wellness::class);
+    }
+
+    public function prestiges()
+    {
+        return $this->hasMany(Prestige::class);
+    }
+
+    public function internalizations()
+    {
+        return $this->hasMany(Internalization::class);
+    }
+
+    public function campuses()
+    {
+        return $this->hasMany(Campus::class);
+    }
+
+    public function academies()
+    {
+        return $this->hasMany(Academy::class);
+    }
+
+    public function zones()
+    {
+        return $this->hasMany(Zone::class);
+    }
+
+    public function becas()
+    {
+        return $this->hasMany(Beca::class);
+    }
+
+    public function bonds()
+    {
+        return $this->hasMany(Bond::class);
+    }
+
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
 }

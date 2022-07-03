@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->double('laboratorios');
             $table->double('cafeterias_restaurantes');
             $table->double('espacios_comunes');
-            $table->unsignedBigInteger('university_id');
+            $table->unsignedBigInteger('academic_program_id');
 
             $table->timestamps();
         });

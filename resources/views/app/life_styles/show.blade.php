@@ -44,10 +44,10 @@
                 </div>
                 <div class="mb-4">
                     <h5>
-                        @lang('crud.dimensi_n_estilos_de_vida.inputs.university_id')
+                        @lang('crud.dimensi_n_estilos_de_vida.inputs.academic_program_id')
                     </h5>
                     <span
-                        >{{ optional($lifeStyle->university)->name ?? '-'
+                        >{{ optional($lifeStyle->academicProgram)->name ?? '-'
                         }}</span
                     >
                 </div>

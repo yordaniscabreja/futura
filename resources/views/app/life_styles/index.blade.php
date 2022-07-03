@@ -65,7 +65,7 @@
                                 @lang('crud.dimensi_n_estilos_de_vida.inputs.servicio_estudiante')
                             </th>
                             <th class="text-left">
-                                @lang('crud.dimensi_n_estilos_de_vida.inputs.university_id')
+                                @lang('crud.dimensi_n_estilos_de_vida.inputs.academic_program_id')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -83,8 +83,8 @@
                                 {{ $lifeStyle->servicio_estudiante ?? '-' }}
                             </td>
                             <td>
-                                {{ optional($lifeStyle->university)->name ?? '-'
-                                }}
+                                {{ optional($lifeStyle->academicProgram)->name
+                                ?? '-' }}
                             </td>
                             <td class="text-center" style="width: 134px;">
                                 <div

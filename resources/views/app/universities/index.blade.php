@@ -65,9 +65,6 @@
                                 @lang('crud.universidades.inputs.principal')
                             </th>
                             <th class="text-left">
-                                @lang('crud.universidades.inputs.url')
-                            </th>
-                            <th class="text-left">
                                 @lang('crud.universidades.inputs.direccion')
                             </th>
                             <th class="text-left">
@@ -77,10 +74,19 @@
                                 @lang('crud.universidades.inputs.egresados')
                             </th>
                             <th class="text-left">
-                                @lang('crud.universidades.inputs.description')
+                                @lang('crud.universidades.inputs.general_description')
                             </th>
                             <th class="text-left">
-                                @lang('crud.universidades.inputs.image')
+                                @lang('crud.universidades.inputs.logo')
+                            </th>
+                            <th class="text-left">
+                                @lang('crud.universidades.inputs.url')
+                            </th>
+                            <th class="text-left">
+                                @lang('crud.universidades.inputs.about_video_url')
+                            </th>
+                            <th class="text-left">
+                                @lang('crud.universidades.inputs.background_image')
                             </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
@@ -97,18 +103,35 @@
                                 {{ optional($university->city)->name ?? '-' }}
                             </td>
                             <td>{{ $university->principal ?? '-' }}</td>
+                            <td>{{ $university->direccion ?? '-' }}</td>
+                            <td>{{ $university->fundada_at ?? '-' }}</td>
+                            <td>{{ $university->egresados ?? '-' }}</td>
+                            <td>
+                                {{ $university->general_description ?? '-' }}
+                            </td>
+                            <td>
+                                <x-partials.thumbnail
+                                    src="{{ $university->logo ? \Storage::url($university->logo) : '' }}"
+                                />
+                            </td>
                             <td>
                                 <a target="_blank" href="{{ $university->url }}"
                                     >{{ $university->url ?? '-' }}</a
                                 >
                             </td>
-                            <td>{{ $university->direccion ?? '-' }}</td>
-                            <td>{{ $university->fundada_at ?? '-' }}</td>
-                            <td>{{ $university->egresados ?? '-' }}</td>
-                            <td>{{ $university->description ?? '-' }}</td>
+                            <td>
+                                @if($university->about_video_url)
+                                <a
+                                    href="{{ \Storage::url($university->about_video_url) }}"
+                                    target="blank"
+                                    ><i class="icon ion-md-download"></i
+                                    >&nbsp;Download</a
+                                >
+                                @else - @endif
+                            </td>
                             <td>
                                 <x-partials.thumbnail
-                                    src="{{ $university->image ? \Storage::url($university->image) : '' }}"
+                                    src="{{ $university->background_image ? \Storage::url($university->background_image) : '' }}"
                                 />
                             </td>
                             <td class="text-center" style="width: 134px;">
@@ -159,7 +182,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="12">
+                            <td colspan="14">
                                 @lang('crud.common.no_items_found')
                             </td>
                         </tr>
@@ -167,7 +190,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="12">
+                            <td colspan="14">
                                 {!! $universities->render() !!}
                             </td>
                         </tr>

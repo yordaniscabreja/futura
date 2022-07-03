@@ -5,7 +5,7 @@ namespace Tests\Feature\Controllers;
 use App\Models\User;
 use App\Models\LifeStyle;
 
-use App\Models\University;
+use App\Models\AcademicProgram;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -110,7 +110,7 @@ class LifeStyleControllerTest extends TestCase
     {
         $lifeStyle = LifeStyle::factory()->create();
 
-        $university = University::factory()->create();
+        $academicProgram = AcademicProgram::factory()->create();
 
         $data = [
             'ambiente' => $this->faker->randomNumber(2),
@@ -118,7 +118,7 @@ class LifeStyleControllerTest extends TestCase
             'descanso_relax' => $this->faker->randomNumber(2),
             'cultura_ecologica' => $this->faker->randomNumber(2),
             'servicio_estudiante' => $this->faker->randomNumber(2),
-            'university_id' => $university->id,
+            'academic_program_id' => $academicProgram->id,
         ];
 
         $response = $this->put(route('life-styles.update', $lifeStyle), $data);

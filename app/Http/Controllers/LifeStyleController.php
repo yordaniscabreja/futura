@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\LifeStyle;
-use App\Models\University;
 use Illuminate\Http\Request;
+use App\Models\AcademicProgram;
 use App\Http\Requests\LifeStyleStoreRequest;
 use App\Http\Requests\LifeStyleUpdateRequest;
 
@@ -36,9 +36,9 @@ class LifeStyleController extends Controller
     {
         $this->authorize('create', LifeStyle::class);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
-        return view('app.life_styles.create', compact('universities'));
+        return view('app.life_styles.create', compact('academicPrograms'));
     }
 
     /**
@@ -79,11 +79,11 @@ class LifeStyleController extends Controller
     {
         $this->authorize('update', $lifeStyle);
 
-        $universities = University::pluck('name', 'id');
+        $academicPrograms = AcademicProgram::pluck('name', 'id');
 
         return view(
             'app.life_styles.edit',
-            compact('lifeStyle', 'universities')
+            compact('lifeStyle', 'academicPrograms')
         );
     }
 
