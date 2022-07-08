@@ -17,7 +17,7 @@ class BecaRequerimentsController extends Controller
      */
     public function index(Request $request, Beca $beca)
     {
-        $this->authorize('view', $beca);
+        //$this->authorize('view', $beca);
 
         $search = $request->get('search', '');
 

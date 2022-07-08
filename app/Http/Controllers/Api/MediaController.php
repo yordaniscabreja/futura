@@ -18,7 +18,7 @@ class MediaController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Media::class);
+       // $this->authorize('view-any', Media::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class MediaController extends Controller
      */
     public function show(Request $request, Media $media)
     {
-        $this->authorize('view', $media);
+       // $this->authorize('view', $media);
 
         return new MediaResource($media);
     }

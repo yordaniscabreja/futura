@@ -17,7 +17,7 @@ class StudentCommentsController extends Controller
      */
     public function index(Request $request, Student $student)
     {
-        $this->authorize('view', $student);
+       // $this->authorize('view', $student);
 
         $search = $request->get('search', '');
 

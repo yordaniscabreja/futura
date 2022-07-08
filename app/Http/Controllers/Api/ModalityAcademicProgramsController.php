@@ -17,7 +17,7 @@ class ModalityAcademicProgramsController extends Controller
      */
     public function index(Request $request, Modality $modality)
     {
-        $this->authorize('view', $modality);
+        //$this->authorize('view', $modality);
 
         $search = $request->get('search', '');
 

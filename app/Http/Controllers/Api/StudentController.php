@@ -18,7 +18,7 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Student::class);
+       // $this->authorize('view-any', Student::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class StudentController extends Controller
      */
     public function show(Request $request, Student $student)
     {
-        $this->authorize('view', $student);
+      //  $this->authorize('view', $student);
 
         return new StudentResource($student);
     }

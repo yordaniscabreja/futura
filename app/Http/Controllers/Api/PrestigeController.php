@@ -18,7 +18,7 @@ class PrestigeController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Prestige::class);
+        //$this->authorize('view-any', Prestige::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class PrestigeController extends Controller
      */
     public function show(Request $request, Prestige $prestige)
     {
-        $this->authorize('view', $prestige);
+        //$this->authorize('view', $prestige);
 
         return new PrestigeResource($prestige);
     }

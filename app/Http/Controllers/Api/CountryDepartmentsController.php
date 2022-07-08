@@ -17,7 +17,7 @@ class CountryDepartmentsController extends Controller
      */
     public function index(Request $request, Country $country)
     {
-        $this->authorize('view', $country);
+        //$this->authorize('view', $country);
 
         $search = $request->get('search', '');
 

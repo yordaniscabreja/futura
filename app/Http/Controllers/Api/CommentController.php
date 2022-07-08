@@ -18,7 +18,7 @@ class CommentController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Comment::class);
+       // $this->authorize('view-any', Comment::class);
 
         $search = $request->get('search', '');
 
@@ -35,7 +35,7 @@ class CommentController extends Controller
      */
     public function store(CommentStoreRequest $request)
     {
-        $this->authorize('create', Comment::class);
+        //$this->authorize('create', Comment::class);
 
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class CommentController extends Controller
      */
     public function show(Request $request, Comment $comment)
     {
-        $this->authorize('view', $comment);
+        //$this->authorize('view', $comment);
 
         return new CommentResource($comment);
     }
@@ -63,7 +63,7 @@ class CommentController extends Controller
      */
     public function update(CommentUpdateRequest $request, Comment $comment)
     {
-        $this->authorize('update', $comment);
+        //$this->authorize('update', $comment);
 
         $validated = $request->validated();
 

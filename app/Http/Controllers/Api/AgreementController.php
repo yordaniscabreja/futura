@@ -18,7 +18,7 @@ class AgreementController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Agreement::class);
+        //$this->authorize('view-any', Agreement::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class AgreementController extends Controller
      */
     public function show(Request $request, Agreement $agreement)
     {
-        $this->authorize('view', $agreement);
+       //$this->authorize('view', $agreement);
 
         return new AgreementResource($agreement);
     }

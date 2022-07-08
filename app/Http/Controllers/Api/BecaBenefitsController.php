@@ -17,7 +17,7 @@ class BecaBenefitsController extends Controller
      */
     public function index(Request $request, Beca $beca)
     {
-        $this->authorize('view', $beca);
+        //$this->authorize('view', $beca);
 
         $search = $request->get('search', '');
 
@@ -37,7 +37,7 @@ class BecaBenefitsController extends Controller
      */
     public function store(Request $request, Beca $beca)
     {
-        $this->authorize('create', Benefit::class);
+       // $this->authorize('create', Benefit::class);
 
         $validated = $request->validate([
             'name' => ['required', 'max:255', 'string'],

@@ -18,7 +18,7 @@ class BecaController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Beca::class);
+       // $this->authorize('view-any', Beca::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class BecaController extends Controller
      */
     public function show(Request $request, Beca $beca)
     {
-        $this->authorize('view', $beca);
+        //$this->authorize('view', $beca);
 
         return new BecaResource($beca);
     }

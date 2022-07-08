@@ -18,7 +18,7 @@ class CampusController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Campus::class);
+       // $this->authorize('view-any', Campus::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class CampusController extends Controller
      */
     public function show(Request $request, Campus $campus)
     {
-        $this->authorize('view', $campus);
+       // $this->authorize('view', $campus);
 
         return new CampusResource($campus);
     }

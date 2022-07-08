@@ -17,7 +17,7 @@ class KnowledgeAreaBasicCoresController extends Controller
      */
     public function index(Request $request, KnowledgeArea $knowledgeArea)
     {
-        $this->authorize('view', $knowledgeArea);
+        //$this->authorize('view', $knowledgeArea);
 
         $search = $request->get('search', '');
 

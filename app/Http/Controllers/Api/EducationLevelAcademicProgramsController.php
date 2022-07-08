@@ -17,7 +17,7 @@ class EducationLevelAcademicProgramsController extends Controller
      */
     public function index(Request $request, EducationLevel $educationLevel)
     {
-        $this->authorize('view', $educationLevel);
+        //$this->authorize('view', $educationLevel);
 
         $search = $request->get('search', '');
 

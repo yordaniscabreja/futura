@@ -18,7 +18,7 @@ class BondController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Bond::class);
+      //  $this->authorize('view-any', Bond::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class BondController extends Controller
      */
     public function show(Request $request, Bond $bond)
     {
-        $this->authorize('view', $bond);
+       // $this->authorize('view', $bond);
 
         return new BondResource($bond);
     }

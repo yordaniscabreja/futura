@@ -18,7 +18,7 @@ class EducationLevelController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', EducationLevel::class);
+      //  $this->authorize('view-any', EducationLevel::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class EducationLevelController extends Controller
      */
     public function show(Request $request, EducationLevel $educationLevel)
     {
-        $this->authorize('view', $educationLevel);
+       // $this->authorize('view', $educationLevel);
 
         return new EducationLevelResource($educationLevel);
     }

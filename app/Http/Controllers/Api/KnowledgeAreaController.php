@@ -18,7 +18,7 @@ class KnowledgeAreaController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', KnowledgeArea::class);
+       // $this->authorize('view-any', KnowledgeArea::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class KnowledgeAreaController extends Controller
      */
     public function show(Request $request, KnowledgeArea $knowledgeArea)
     {
-        $this->authorize('view', $knowledgeArea);
+       // $this->authorize('view', $knowledgeArea);
 
         return new KnowledgeAreaResource($knowledgeArea);
     }

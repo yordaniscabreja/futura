@@ -17,7 +17,7 @@ class UniversityEconomiesController extends Controller
      */
     public function index(Request $request, University $university)
     {
-        $this->authorize('view', $university);
+       // $this->authorize('view', $university);
 
         $search = $request->get('search', '');
 

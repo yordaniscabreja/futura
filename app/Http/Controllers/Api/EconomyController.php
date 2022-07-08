@@ -18,7 +18,7 @@ class EconomyController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Economy::class);
+       // $this->authorize('view-any', Economy::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class EconomyController extends Controller
      */
     public function show(Request $request, Economy $economy)
     {
-        $this->authorize('view', $economy);
+       // $this->authorize('view', $economy);
 
         return new EconomyResource($economy);
     }

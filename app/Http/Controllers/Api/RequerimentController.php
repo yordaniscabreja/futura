@@ -18,7 +18,7 @@ class RequerimentController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Requeriment::class);
+        //$this->authorize('view-any', Requeriment::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class RequerimentController extends Controller
      */
     public function show(Request $request, Requeriment $requeriment)
     {
-        $this->authorize('view', $requeriment);
+       // $this->authorize('view', $requeriment);
 
         return new RequerimentResource($requeriment);
     }

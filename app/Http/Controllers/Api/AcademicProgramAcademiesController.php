@@ -17,7 +17,7 @@ class AcademicProgramAcademiesController extends Controller
      */
     public function index(Request $request, AcademicProgram $academicProgram)
     {
-        $this->authorize('view', $academicProgram);
+       // $this->authorize('view', $academicProgram);
 
         $search = $request->get('search', '');
 

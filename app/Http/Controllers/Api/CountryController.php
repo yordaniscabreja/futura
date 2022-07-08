@@ -18,7 +18,7 @@ class CountryController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Country::class);
+        //$this->authorize('view-any', Country::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class CountryController extends Controller
      */
     public function show(Request $request, Country $country)
     {
-        $this->authorize('view', $country);
+       // $this->authorize('view', $country);
 
         return new CountryResource($country);
     }

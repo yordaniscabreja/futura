@@ -18,7 +18,7 @@ class WellnessController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Wellness::class);
+        //$this->authorize('view-any', Wellness::class);
 
         $search = $request->get('search', '');
 

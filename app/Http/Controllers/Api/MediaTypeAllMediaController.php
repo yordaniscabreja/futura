@@ -17,7 +17,7 @@ class MediaTypeAllMediaController extends Controller
      */
     public function index(Request $request, MediaType $mediaType)
     {
-        $this->authorize('view', $mediaType);
+       // $this->authorize('view', $mediaType);
 
         $search = $request->get('search', '');
 

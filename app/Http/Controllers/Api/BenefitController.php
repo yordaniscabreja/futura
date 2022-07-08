@@ -18,7 +18,7 @@ class BenefitController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Benefit::class);
+        //$this->authorize('view-any', Benefit::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class BenefitController extends Controller
      */
     public function show(Request $request, Benefit $benefit)
     {
-        $this->authorize('view', $benefit);
+        //$this->authorize('view', $benefit);
 
         return new BenefitResource($benefit);
     }

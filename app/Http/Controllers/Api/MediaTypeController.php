@@ -18,7 +18,7 @@ class MediaTypeController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', MediaType::class);
+        //$this->authorize('view-any', MediaType::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class MediaTypeController extends Controller
      */
     public function show(Request $request, MediaType $mediaType)
     {
-        $this->authorize('view', $mediaType);
+       // $this->authorize('view', $mediaType);
 
         return new MediaTypeResource($mediaType);
     }

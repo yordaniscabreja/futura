@@ -18,7 +18,7 @@ class CityController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', City::class);
+        //$this->authorize('view-any', City::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class CityController extends Controller
      */
     public function show(Request $request, City $city)
     {
-        $this->authorize('view', $city);
+        //$this->authorize('view', $city);
 
         return new CityResource($city);
     }

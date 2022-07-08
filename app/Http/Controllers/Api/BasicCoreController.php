@@ -18,7 +18,7 @@ class BasicCoreController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', BasicCore::class);
+        //$this->authorize('view-any', BasicCore::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class BasicCoreController extends Controller
      */
     public function show(Request $request, BasicCore $basicCore)
     {
-        $this->authorize('view', $basicCore);
+       // $this->authorize('view', $basicCore);
 
         return new BasicCoreResource($basicCore);
     }

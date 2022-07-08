@@ -18,7 +18,7 @@ class LifeStyleController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', LifeStyle::class);
+      //  $this->authorize('view-any', LifeStyle::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class LifeStyleController extends Controller
      */
     public function show(Request $request, LifeStyle $lifeStyle)
     {
-        $this->authorize('view', $lifeStyle);
+        //$this->authorize('view', $lifeStyle);
 
         return new LifeStyleResource($lifeStyle);
     }

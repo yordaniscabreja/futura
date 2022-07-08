@@ -398,7 +398,40 @@ Route::name('api.')->group(function () {
         UniversityController::class,
         'programasUniversidad',
     ])->name('universities.programasUniversidad');
+    //Comentarios de una universidad
+    Route::get('/comentariosUniversidad/{university_id}', [
+        UniversityController::class,
+        'comentariosUniversidad',
+    ])->name('universities.comentariosUniversidad');
+    //Becas de una universidad
+    Route::get('/becasUniversidad/{university_id}', [
+        UniversityController::class,
+        'becasUniversidad',
+    ])->name('universities.becasUniversidad');
 
+    //Dimensiones de una universidad
+    Route::get('/dimensionesUniversidad/{university_id}', [
+        UniversityController::class,
+        'dimensionesUniversidad',
+    ])->name('universities.dimensionesUniversidad');
+
+    //programas de universidades convenio futura
+    Route::get('/programasConvenio', [
+        UniversityController::class,
+        'programasConvenio',
+    ])->name('universities.programasConvenio');
+
+//programas con detalles
+Route::get('/academicProgramDetails/{program_id}', [
+    AcademicProgramController::class,
+    'academicProgramDetails',
+])->name('academicProgram.academicProgramDetails');
+
+//Comentarios de un programa con detalles
+Route::get('/comentariosPrograma/{program_id}', [
+    AcademicProgramController::class,
+    'comentariosPrograma',
+])->name('academicProgram.comentariosPrograma');
     /**
      * ////////////////////////////////////////////////////////////////
     * Fin Rutas personalizadas para extraer datos de las universidades

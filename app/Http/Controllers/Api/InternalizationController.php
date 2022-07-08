@@ -18,7 +18,7 @@ class InternalizationController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Internalization::class);
+       // $this->authorize('view-any', Internalization::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class InternalizationController extends Controller
      */
     public function show(Request $request, Internalization $internalization)
     {
-        $this->authorize('view', $internalization);
+       // $this->authorize('view', $internalization);
 
         return new InternalizationResource($internalization);
     }

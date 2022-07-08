@@ -18,7 +18,7 @@ class ZoneController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Zone::class);
+       // $this->authorize('view-any', Zone::class);
 
         $search = $request->get('search', '');
 

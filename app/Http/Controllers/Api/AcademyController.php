@@ -18,7 +18,7 @@ class AcademyController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Academy::class);
+        //$this->authorize('view-any', Academy::class);
 
         $search = $request->get('search', '');
 
@@ -51,7 +51,7 @@ class AcademyController extends Controller
      */
     public function show(Request $request, Academy $academy)
     {
-        $this->authorize('view', $academy);
+       // $this->authorize('view', $academy);
 
         return new AcademyResource($academy);
     }

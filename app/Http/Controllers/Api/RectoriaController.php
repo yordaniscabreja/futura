@@ -19,7 +19,7 @@ class RectoriaController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Rectoria::class);
+       // $this->authorize('view-any', Rectoria::class);
 
         $search = $request->get('search', '');
 
@@ -55,7 +55,7 @@ class RectoriaController extends Controller
      */
     public function show(Request $request, Rectoria $rectoria)
     {
-        $this->authorize('view', $rectoria);
+       // $this->authorize('view', $rectoria);
 
         return new RectoriaResource($rectoria);
     }

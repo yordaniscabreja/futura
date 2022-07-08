@@ -17,7 +17,7 @@ class AgreementBondsController extends Controller
      */
     public function index(Request $request, Agreement $agreement)
     {
-        $this->authorize('view', $agreement);
+       // $this->authorize('view', $agreement);
 
         $search = $request->get('search', '');
 

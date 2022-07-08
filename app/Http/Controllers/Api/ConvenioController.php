@@ -19,7 +19,7 @@ class ConvenioController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Convenio::class);
+       // $this->authorize('view-any', Convenio::class);
 
         $search = $request->get('search', '');
 
@@ -55,7 +55,7 @@ class ConvenioController extends Controller
      */
     public function show(Request $request, Convenio $convenio)
     {
-        $this->authorize('view', $convenio);
+        //$this->authorize('view', $convenio);
 
         return new ConvenioResource($convenio);
     }

@@ -17,7 +17,7 @@ class BasicCoreAcademicProgramsController extends Controller
      */
     public function index(Request $request, BasicCore $basicCore)
     {
-        $this->authorize('view', $basicCore);
+        //$this->authorize('view', $basicCore);
 
         $search = $request->get('search', '');
 
